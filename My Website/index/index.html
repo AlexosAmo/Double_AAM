@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: Grey;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        /* Center content and add padding for the home section */
+        .center {
+            display: block;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #168a80;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: center;
+        }
+        /* Container styles for forms */
+        .container {
+            padding: 30px;
+            border-radius: 10px;
+            background: #444;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: none; /* Initially hidden */
+            text-align: center; /* Center text for Sign Up */
+            max-width: 400px; /* Limit width for better presentation */
+            margin: 20px auto; /* Center container */
+        }
+        /* Header styles */
+        h1 {
+            color: #168a80;
+            margin-bottom: 20px;
+        }
+        h1.welcome {
+            color: #897809;
+        }
+        h3.top {
+            color: #555;
+        }
+        /* Image styles */
+        img {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(220, 42, 6, 0.1);
+        }
+        /* Spacing for paragraphs */
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: center;
+        }
+        /* Button styles */
+        .bnS, .floating-button, .back-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff8888, #ff7300);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            width: 100%; /* Full-width buttons */
+        }
+        .bnS:hover, .floating-button:hover, .back-button:hover {
+            background: #ff7300;
+            color: #000;
+        }
+        .box {
+            position: relative;
+            margin: 10px 0;
+        }
+        .box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        /* Positioning of floating buttons */
+        .floating-button {
+            position: absolute;
+            border-radius: 5px;
+            background-color: #168a80;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%; /* Full width */
+        }
+        #games { top: 20px; }
+        #designer { top: 80px; }
+        #techtrons { top: 140px; }
+        #enterprise { top: 200px; }
+        #codecracks { top: 260px; }
+        /* Footer styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center" id="home">
+        <h1 class="welcome">Welcome to my website</h1>
+        <h3 class="top">I am <span><i><b>Alexos Amo</b></i></span></h3>
+        <img src="website.jpg" alt="Website Image" />
+        <p>Follow me on <a href="https://twitter.com/Alexos_amo0129" target="_blank">Twitter</a>, <a href="https://www.linkedin.com/in/alexos-amo" target="_blank">LinkedIn</a>, and <a href="https://www.facebook.com/share/12EtXf7R6Lz/" target="_blank">Facebook</a>.</p>
+        <button class="bnS" onclick="goToSignUp()">Next</button>
+    </div>
+
+    <div class="container" id="signup">
+        <h1>Sign Up</h1>
+        <p>Enter your account details</p>
+        
+        <div class="Fix">
+            <div class="box">
+                <input type="text" id="name" placeholder="Name" required>
+            </div>
+            <div class="box">
+                <input type="email" id="email" placeholder="Email (must contain '@')" required>
+            </div>
+            <div class="box">
+                <input type="password" id="password" placeholder="Password (min 8 chars, 2 numbers, 1 special char)" required>
+            </div>
+        </div>
+        
+        <p class="psd">Already have an account? <a href="#" style="color: #fffb88;" onclick="goToLogin()">Login</a></p>
+        
+        <button class="bnS" onclick="signUp()">Sign Up</button>
+        <button class="back-button" onclick="goBackToHome()">Back</button>
+    </div>
+
+    <div class="container" id="login" style="display: none;">
+        <h1>Login</h1>
+        <p>Enter your credentials</p>
+        
+        <div class="Fix">
+            <div class="box">
+                <input type="text" id="loginName" placeholder="Name" required>
+            </div>
+            <div class="box">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+            </div>
+        </div>
+        
+        <button class="bnS" onclick="login()">Login</button>
+        <button class="back-button" onclick="goBackToHome()">Back</button>
+    </div>
+
+    <h1 style="display: none;" id="homepage-title">Welcome to My Homepage</h1>
+    <p style="display: none;" id="homepage-description">Your gateway to exciting content and resources!</p>
+    
+    <button class="floating-button" id="games" style="display: none;" onclick="alert('Navigating to Games!')">Games</button>
+    <button class="floating-button" id="designer" style="display: none;" onclick="alert('Navigating to Designer!')">Designer</button>
+    <button class="floating-button" id="techtrons" style="display: none;" onclick="alert('Navigating to Tech-Trons!')">Tech-Trons</button>
+    <button class="floating-button" id="enterprise" style="display: none;" onclick="alert('Navigating to Enterprise!')">Enterprise</button>
+    <button class="floating-button" id="codecracks" style="display: none;" onclick="alert('Navigating to CodeCracks!')">CodeCracks</button>
+
+    <footer>
+        <p>&copy; 2025 Alexos Amo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goToSignUp() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
+        }
+
+        function goToLogin() {
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('login').style.display = 'block';
+        }
+
+        function goBackToHome() {
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('home').style.display = 'block';
+        }
+
+        function signUp() {
+            // Get user input values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate email
+            if (!email.includes('@')) {
+                alert('Email must contain "@" sign.');
+                return;
+            }
+
+            // Validate password
+            const passwordPattern = /^(?=.*[0-9].*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert('Password must contain at least 8 characters, including 2 numbers and 1 special character.');
+                return;
+            }
+
+            // Save to local storage (optional)
+            const userInfo = { name, email, password };
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+            // Show homepage after successful sign up
+            goToHomePage();
+        }
+
+        function login() {
+            const loginName = document.getElementById('loginName').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+
+            // Here you would typically validate the login credentials against stored data
+            // For this example, we assume successful login
+            goToHomePage();
+        }
+
+        function goToHomePage() {
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('homepage-title').style.display = 'block';
+            document.getElementById('homepage-description').style.display = 'block';
+            document.getElementById('games').style.display = 'block';
+            document.getElementById('designer').style.display = 'block';
+            document.getElementById('techtrons').style.display = 'block';
+            document.getElementById('enterprise').style.display = 'block';
+            document.getElementById('codecracks').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

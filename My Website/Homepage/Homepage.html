@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        /* Header styles */
+        h1 {
+            color: #168a80;
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+        /* Button styles */
+        .floating-button {
+            position: absolute;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #168a80;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .floating-button:hover {
+            background-color: #135e56;
+        }
+        /* Positioning of buttons */
+        #games { top: 20px; left: 20px; }
+        #designer { top: 20px; left: 120px; }
+        #techtrons { top: 20px; left: 220px; }
+        #enterprise { top: 20px; left: 320px; }
+        #codecracks { top: 20px; left: 420px; }
+        /* Footer styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Homepage</h1>
+    <p>Your gateway to exciting content and resources!</p>
+    
+    <button class="floating-button" id="games" onclick="alert('Navigating to Games!')">Games</button>
+    <button class="floating-button" id="designer" onclick="alert('Navigating to Designer!')">Designer</button>
+    <button class="floating-button" id="techtrons" onclick="alert('Navigating to Tech-Trons!')">Tech-Trons</button>
+    <button class="floating-button" id="enterprise" onclick="alert('Navigating to Enterprise!')">Enterprise</button>
+    <button class="floating-button" id="codecracks" onclick="alert('Navigating to CodeCracks!')">CodeCracks</button>
+
+    <footer>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

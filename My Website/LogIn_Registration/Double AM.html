@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double AM</title>
+    <style>
+        @keyframes glowingbnS {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            background: #444;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .box {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .box label {
+            display: none; /* Hide label for input fields */
+        }
+
+        .bnS {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff8888, #ff7300);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .bnS:hover {
+            background: #ff7300;
+            color: #000;
+        }
+
+        .bnS:active {
+            color: #000;
+        }
+
+        .bnS:active:after {
+            background: transparent;
+        }
+
+        .container:hover::before,
+        .bnS:hover::before {
+            opacity: 1;
+        }
+
+        .container::before,
+        .bnS::before {
+            content: "";
+            background: linear-gradient(45deg,
+                #ff8888,
+                #ff7300,
+                #fffb88,
+                #48ff00,
+                #802bff,
+                #7ab8ff,
+                #ff88c8,
+                #ff8800);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowingbnS 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .psd a {
+            color: #fffb88; /* Change link color for visibility */
+        }
+    </style>
+    <link rel="stylesheet" href="css_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <p>Enter your account details</p>
+        
+        <div class="Fix">
+            <div class="box">
+                <input type="text" placeholder="Name" required>
+                <label></label>
+            </div>
+            <div class="box">
+                <input type="email" placeholder="Email" required>
+                <label></label>
+            </div>
+            <div class="box">
+                <input type="password" placeholder="Password" required>
+                <label></label>
+            </div>
+        </div>
+        
+        <p class="psd">Already have an account? <a href="#" style="color: #fffb88;">Login</a></p>
+        
+        <button class="bnS" type="submit">Sign Up</button> 
+    </div>
+</body>
+</html>

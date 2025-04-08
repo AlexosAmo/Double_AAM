@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #168a80;
+            color: #333;
+        }
+        /* Center content and add padding */
+        .center {
+            display: block;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #168a80;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            text-align: center;
+        }
+        /* Header styles */
+        h1.welcome {
+            color: #897809;
+        }
+        h3.top {
+            color: #555;
+        }
+        /* Image styles */
+        img {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(220, 42, 6, 0.1);
+        }
+        /* Spacing for paragraphs */
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        /* Link styles */
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Footer styles */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+        /* Styles for the second page */
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            background: #444;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        .box {
+            position: relative;
+            margin: 10px 0;
+        }
+        .box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .bnS {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff8888, #ff7300);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .bnS:hover {
+            background: #ff7300;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center" id="home">
+        <h1 class="welcome">Welcome to my website</h1>
+        <h3 class="top">I am <span><i><b>Alexos Amo</b></i></span></h3>
+        <img src="website.jpg" alt="Website Image" />
+        <p>Follow me on <a href="https://twitter.com/Alexos_amo0129" target="_blank">Twitter</a>, <a href="https://www.linkedin.com/in/alexos-amo" target="_blank">LinkedIn</a>, and <a href="https://www.facebook.com/share/12EtXf7R6Lz/" target="_blank">Facebook</a>.</p>
+        <button class="bnS" onclick="goToSignUp()">Next</button>
+    </div>
+
+    <div class="container" id="signup" style="display: none;">
+        <h1>Sign Up</h1>
+        <p>Enter your account details</p>
+        
+        <div class="Fix">
+            <div class="box">
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div class="box">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="box">
+                <input type="password" placeholder="Password" required>
+            </div>
+        </div>
+        
+        <p class="psd">Already have an account? <a href="#" style="color: #fffb88;">Login</a></p>
+        
+        <button class="bnS" type="submit">Sign Up</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alexos Amo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goToSignUp() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('signup').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
