@@ -68,7 +68,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 For questions, suggestions, or more information, please contact:
 - Your Name - [Alexos-email](mailto:AmogelangAlex06@gmail.com)
-- Project Repository: [Alexos Amo](https:)
+- Project Repository: [Alexos Amo](https:https://github.com/AlexosAmo#:~:text=AlexosAmo,-Edit%20profile)
 
 ---
 
